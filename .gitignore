@@ -6,3 +6,4 @@ temp/
 venv
 .DS_Store
 .venv
+.ipynb_checkpoints
