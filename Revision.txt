@@ -1,0 +1,47 @@
+                              Machine Learning - Revision
+                             -----------------------------
+1. What is Machine Learning?
+Ans: Field of study that gives computers the ability to learn without being 
+explicitly programmed. IT is a subset of AI where we train the machines to learn 
+from data that understand the underlying patterns and use it for predictions.
+Making machine do the task which otherwise need human intelligence.
+
+2. What are the 2 broad types of machine learning?
+Ans: Supervised ML & Unsupervised ML
+
+3. What are the different types of datasets that we discussed yesterday?
+Ans: Structured(Eg: Excel data), 
+     Unstructured(Images, Videos, Audios, Text) and 
+     Semi-structured(JSON, XML) datasets.
+
+4. When would you use supervised machine learning?
+Ans: It is used whenever the historic dataset has labels in it. 
+
+5. What are the other terms/names that can be used to refer the label in a dataset?
+Ans: output / target variable / dependant variable
+
+6. When would you use unsupervised machine learning and what is the outcome of 
+unsupervised ML technique?
+Ans: It is used whenever the historic dataset doesn't have labels in it (i.e) when the 
+historic dataset is unlabelled.
+And the output of unsupervised ML is grouping of data points into clusters. 
+(i.e) similar data points would be grouped in one cluster whereas the 
+dissimilar ones would be grouped in different clusters.
+
+7. What are the 2 types of supervised machine learning techniques?
+Ans: Regression & Classification
+
+8. When would you use regression & when would you use classification? Give examples.
+Ans: Regression is used when the target variable is of continuous numeric type.
+Eg: Stock price, house price predictions, temperature predictions
+     Classification is used when the target variable is of categorical type.
+Eg: Spam detection, Grades of students, Disease classification
+
+9. State True/False. Deep learning is a subset of machine learning.
+Ans: True
+
+10. What are the different types of regression algorithms?
+Ans: Linear and Non Linear regression algorithms
+
+=====================================================================================
+
