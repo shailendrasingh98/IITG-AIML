@@ -1,0 +1,93 @@
+                              Machine Learning - Revision
+                             -----------------------------
+1. What is Machine Learning?
+Ans: The Field of study that gives computers the ability to learn without being 
+explicitly programmed. IT is a subset of AI where we train the machines to learn 
+from data that understand the underlying patterns and use it for predictions.
+Making machines do the tasks that otherwise need human intelligence.
+
+2. What are the 2 broad types of machine learning?
+Ans: Supervised ML & Unsupervised ML
+
+3. What are the different types of datasets that we discussed yesterday?
+Ans: Structured(Eg: Excel data), 
+     Unstructured(Images, Videos, Audios, Text) and 
+     Semi-structured(JSON, XML) datasets.
+
+4. When would you use supervised machine learning?
+Ans: It is used whenever the historic dataset has labels in it. 
+
+5. What are the other terms/names that can be used to refer to the label in a dataset?
+Ans: Output/target variable/dependent variable
+
+6. When would you use unsupervised machine learning, and what is the outcome of 
+unsupervised ML technique?
+Ans: It is used whenever the historic dataset doesn't have labels in it (i.e, when the 
+historic dataset is unlabeled.
+And the output of unsupervised ML is the grouping of data points into clusters. 
+(i.e) similar data points would be grouped in one cluster, whereas the 
+dissimilar ones would be grouped in different clusters.
+
+7. What are the 2 types of supervised machine learning techniques?
+Ans: Regression & Classification
+
+8. When would you use regression & when would you use classification? Give examples.
+Ans: Regression is used when the target variable is of a continuous numeric type.
+Eg: Stock price, house price predictions, temperature predictions
+     Classification is used when the target variable is of a categorical type.
+Eg: Spam detection, Grades of students, Disease classification
+
+9. State True/False. Deep learning is a subset of machine learning.
+Ans: True
+
+10. What are the different types of regression algorithms?
+Ans: Linear and Non Linear regression algorithms
+
+=====================================================================================
+11. What is the name of the library in Python that is used for Machine Learning?
+Ans: Scikit Learn
+
+12. Why do we create X & y variables as part of the ML model-building process?
+Ans: X contains all the features and y contains the label of the dataset.
+It is necessary to create these variables to present the features and the label of
+the dataset to the ML model clearly.
+
+13. Is it mandatory to split the input dataset into train and test sets? If yes. Why?
+Ans: Yes, because the model has to be tested with a separate set of data points other
+than the ones used during the training phase to ensure a fair evaluation. 
+Also, the data collection process is a tedious one that can also be expensive.
+
+14. What are the different train: test ratios that we discussed?
+Ans: 75:25, 80:20, 70:30, 60:40
+
+15. Why is there a need for the ratio of the training dataset to be higher than that 
+of testing dataset?
+Ans: Because the higher the number of good-quality data points used for training
+the model, the better the results will be.
+
+16. Name the evaluation metrics that can be used for a Regression model.
+Ans: RMSE(Root Mean Squared Error) (0 to infinity) and
+     R2 Score/Coefficient of determination(0-1).
+
+======================================================================================
+
+
+When test and train root mean square error (RMSE) are high - underfitting ---> may be wrong algorithm (Not suitable for this dataset)
+
+When test and train RMSE are in acceptable range (low) - appropriate 
+
+When test root mean square error (rmse is high and train rmse is low  - overfitting ---> could be due to many things, 
+1. Representation of data points in training and test (not proper representation of all the features),  For Eg. Like training data has 3 locations data while test has only 2.
+
+2. Features might be correlated to each other 
+
+
+
+
+
+
+
+
+
+
+

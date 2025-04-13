@@ -1,1 +1,1 @@
-This repo is for all the material that i have learned as part of this course on AIML from IIT Guwhati. 
+This repo contains all the material that I learned as part of this AIML course from IIT Guwhati. 
