@@ -1,0 +1,234 @@
+Classification :
+
+Supervised ML approach . when the target variable(y) is of categorical type,
+then you would choose classification. 
+
+Ex : Tall/Short/Medium , Sick/healthy , Grades of a student(A/B/C/D/E/F)
+
+algorithms:
+
+1. Logistic Regression
+2. K Nearest Neighbors 
+3. Decision Trees
+4. Support Vector Machines
+5. Naive Bayes Classifier 
+
+===========================================================================
+
+Quantitative variables , Qualitative variables 
+
+Quantitative -- continuous - Eg: stock price , 
+             -- discrete - Eg: Population, no of houses
+
+Qualitative -- nominal , ordinal , binomial(binary)
+
+
+binary   -- 0/1 -- True/False
+nominal  -- fruit names, gender(male/female/transgender) 
+      - when there are more than 2 categories and when there is no order between them
+ordinal  -- grades of an exam - A>B>C>D>E>F , 5>4>3>2>1
+======================================================================================
+Encoding:
+
+--the process of converting textual data to numbers
+
+1.One hot encoding
+2. Label encoding
+
+One hot encoding :
+
+Gender -- Male/Female/Transgender  -- nominal variable
+
+Dataset had 10 cols before OHE.
+After OHE the Gender col , how many cols will be there?
+Ans : 12  (9+3)
+
+result :
+
+          Gender_Male   | Gender_Female  |  Gender_Transgender
+
+Male           1                 0                 0
+
+Female         0                 1                 0
+
+Transgender    0                 0                 1
+
+cust id, cust name, gender, address, age - 5 cols (initially)
+101,     Vaishali, Female, 190/1, Bangalore-56, 28
+
+we decide to perform OHE on gender column.
+Gender - Male/Female/Transgender
+After OHE, 
+cust id, cust name,address,             age, gender_male, gender_female, gender_transgender - 7 cols(after OHE)
+101,     Vaishali, 190/1, Bangalore-56, 28 ,  0,   1,  0
+
+
+pd.get_dummies(df['Gender'])
+
+OHE is used to encode all the categorical features only.
+
+Dataset : Customer_Name, Location name -- no.of columns = 2
+Location column --> Area A, Area b , Area C , Area D , Area E
+
+apply OHE on the Location column (i.e) pd.get_dummies(df['Location'])
+
+           Location_AreaA | Location_AreaB | Location_AreaC | Location_AreaD | Location_AreaE
+transformed Dataset : Customer_Name, Location_AreaA, ...LocationAreaE -- no.of columns = 6
+---------------------------------------------------------------------------------------------
+
+Label encoding :
+
+Grades -- A B C D E F
+
+result:
+Grades  -- 0 1 2 3 4 5(these numbers are assigned according to the alphabetical order only)
+
+Eg: Apples, oranges, bananas - 0,2,1 (alphabetical order)
+Eg: Mango , Mulberry - 0, 1
+
+Label encoding should be used for encoding the categorical target variables always.
+
+Why only LE and not OHE for target variable?
+
+Bcoz the target variable has to remain as a single column
+
+apply label encoder on Location column --> Area A, Area b , Area C , Area D , Area E
+
+Area A - 0 , Area B - 1 , Area C - 2, Area D - 3 , Area E -4 --> introduce
+ordinality in a nominal categorical feature. 
+This is the drawback of using Label encoder on the nominal categorical feature. 
+
+To apply label encoder on a column, we need to import the separate package from
+scikit learn Library. 
+----------------------------------------------------------------------------
+Classification Evaluation Metrics :
+
+For a 2 class classification problem , we consider confusion matrix       
+
+
+Cancer / not 
+                       cancer |    not       (predicted value) y_pred_test
+
+(actual value) cancer|  10(TP)|     20 (FN) 
+
+ y_test        not   |  30(FP)|     40 (TN)
+
+
+here, we have considered 100 data points 
+
+the model has correctly predicted the people who have cancer , as cancerous
+and this number = 10 = True Positives 
+
+the model has correctly predicted the people who are healthy , as healthy
+and this number = 40  = True negatives 
+
+The model has wrongly predicted the people who are not having cancer as 
+cancerous and this number = 30 = False Positive
+
+The model has wrongly predicted the people who are having cancer as healthy
+and this number = 20 = False Negative 
+
+False Positive -- are also called Type 1 error
+
+False Negative -- are also called Type 2 error
+
+Type 1 error is less harmful than a type 2 error. 
+
+Based on the values in the confusion matrix , we have 4 different metrics 
+for evaluating a classification model.
+
+1. Accuracy  = TP + TN / (TP + TN + FP + FN)
+
+
+2. Precision = TP / (TP + FP ) -- how precisely your model is identifying the
+               cancerous patients ( positive class)
+             = TN / (TN + FN) -- how precisely your model is identifying the
+               healthy people(negative class)
+              the other name of precision metric is specificity
+
+3. Recall   = TP / TP + FN(positive)  or TN/ TN+ FP. the other name for the 
+              recall metric is sensitivity
+
+4. F1 Score = 2 * Recall*Precision / Recall + Precision 
+            = harmonic mean of precision and recall
+
+=====================================================================================
+
+scikit learn metrics -- accuracy_score --> tells you how accurate your model 
+                                           is
+
+scikit learn metrics -- classification report --> tells you about the precision,
+                                                recall and f1 score. 
+
+======================================================================================
+
+Example for understanding scaling / normalizing the data:
+
+Eg: Employee dataset - about 2000 employees of a company 
+
+Salary/month -- Rs.15,000/- - Rs.5,00,000/-
+Age          -- 21 - 60
+Years of Exp -- 0  - 40 
+
+target -- whether a person will stay or leave the company?
+
+result of normalization/ standardisation of data features:
+
+Salary / month -- 0 to 1
+Age            -- 0 to 1 
+Years of Exp   -- 0 to 1 
+
+Different scalers are available -- MinMax Scaler, Standard Scaler 
+Scaling is necessary whenever there are a number of numerical type feature
+in the dataset.
+-----------------------------------------------------------------------------
+
+Identifying the quality of the ML model:
+
+1. Underfitting --> The ML model performs extremely poor on both the training dataset 
+and the testing dataset
+(i.e) Training accuracy < less than optimal limits 
+Testing accuracy <  less than optimal limits 
+==> this demands a change in the ML algorithm being used 
+
+2. Appropriate -->The ML model performs well on both the training dataset 
+and on the testing dataset
+(i.e) Training accuracy  == expected value
+Testing accuracy == expected value
+
+3. Overfitting ---> The ML model performs extremely well on the training dataset 
+while it fails miserably on the testing dataset
+
+(i.e) Training accuracy > Testing accuracy 
+
+-------------------------------------------------------------------------------------
+Mode, Median , Mean 
+
+consider -  1,2,3,1,4,5,2,1,1
+
+Mean --> 20/ 9= 2.
+
+Median --> 1,1,1,1,2,2,3,4,5  --> 2 
+       --> 1,1,1,2,2,3,4,5    --> 2+2/2 = 2 
+
+Mode --> frequently occurring value - 1 
+=====================================================================================
+Logistic Regression:
+--------------------
+It is a classification algorithm. 
+
+A/B --> 1/2 (encoding)
+
+Logistic regression algorithm works well for 2 class (i.e) binary class problems and 
+when the input features are numerical.
+
+Problem: Whether a student would pass or fail in an exam. 
+
+P(Pass) = 0.8 ==> Student will pass in the exam
+
+P(Pass) = 0.4 ==> Student will fail in the exam, P(Fail) = 1 - P(Pass) = 0.6
+
+-------------------------------------------------------------------------------------
+
+
+

@@ -1,0 +1,110 @@
+                              Machine Learning - Revision
+                             -----------------------------
+1. What is Machine Learning?
+Ans: Field of study that gives computers the ability to learn without being 
+explicitly programmed. IT is a subset of AI where we train the machines to learn 
+from data that understand the underlying patterns and use it for predictions.
+Making machine do the task which otherwise need human intelligence.
+
+2. What are the 2 broad types of machine learning?
+Ans: Supervised ML & Unsupervised ML
+
+3. What are the different types of datasets that we discussed yesterday?
+Ans: Structured(Eg: Excel data), 
+     Unstructured(Images, Videos, Audios, Text) and 
+     Semi-structured(JSON, XML) datasets.
+
+4. When would you use supervised machine learning?
+Ans: It is used whenever the historic dataset has labels in it. 
+
+5. What are the other terms/names that can be used to refer the label in a dataset?
+Ans: output / target variable / dependant variable
+
+6. When would you use unsupervised machine learning and what is the outcome of 
+unsupervised ML technique?
+Ans: It is used whenever the historic dataset doesn't have labels in it (i.e) when the 
+historic dataset is unlabelled.
+And the output of unsupervised ML is grouping of data points into clusters. 
+(i.e) similar data points would be grouped in one cluster whereas the 
+dissimilar ones would be grouped in different clusters.
+
+7. What are the 2 types of supervised machine learning techniques?
+Ans: Regression & Classification
+
+8. When would you use regression & when would you use classification? Give examples.
+Ans: Regression is used when the target variable is of continuous numeric type.
+Eg: Stock price, house price predictions, temperature predictions
+     Classification is used when the target variable is of categorical type.
+Eg: Spam detection, Grades of students, Disease classification
+
+9. State True/False. Deep learning is a subset of machine learning.
+Ans: True
+
+10. What are the different types of regression algorithms?
+Ans: Linear and Non Linear regression algorithms
+
+=====================================================================================
+11. What is the name of the library in Python that is used for Machine Learning?
+Ans: Scikit Learn
+
+12. Why do we create X & y variables as part of the ML model building process?
+Ans: X contains all the features and y contains the label of the dataset.
+It is necessary to create these variables to present the features and the label of
+the dataset to the ML model clearly.
+
+13. Is it mandatory to split the input dataset into train and test sets? If, yes.Why?
+Ans: Yes, because the model has to be tested with a separate set of data points other
+than the ones used during the training phase to ensure a fair evaluation. 
+Also, the data collection process is a tedious one that also can be expensive.
+
+14. What are the different train:test ratios that we discussed?
+Ans: 75:25, 80:20, 70:30, 60:40
+
+15. Why is there a need for the ratio of training dataset to be higher than that 
+of testing dataset?
+Ans: Because the higher the number of good qulality data points used for training
+the model, the better will be it's performance.
+
+16. Name the evaluation metrics that can be used for a Regression model.
+Ans: RMSE(Root Mean Squared Error) (0 to infinity) and
+     R2 Score/Co-efficient of determination(0-1).
+
+======================================================================================
+17. How does correlation in the dataset affect regression?
+Ans: Correlation between features is an issue while building a linear regression model.
+Correlation co-ef values exist between -1 to +1;
+wherein if corr co-ef value>0 --> +ve correlation
+	if corr co-ef value<0 --> -ve correlation
+        if corr co-ef value=0 --> no correlation
+Since it is clear that real world features cannot exist without being correlated with 
+each other, the correlation between features with values -0.6 to +0.6 is tolerated.
+
+18. what is regularised regression? Name the regularised regression algorithms.
+Ans: Ridge(L2 regularization), Lasso(L1 regularization) & ElasticNet are the 
+regularised regression algorithms.
+It is a technique used to address the overfitting problem in linear regression model
+by adding a penalty term.
+
+19. When you are building a regularised regression model, can you control the 
+strength of the penalty applied to the loss function of the linear regression model?
+Ans: Yes, through the alpha hyperparameter.
+
+20. Explain overfitting, underfitting and appropriate model. 
+Ans: Overfitting is when the model performs well on training data but not well on 
+testing dataset.
+Underfitting is when the model does not perform well on both the training and 
+testing datasets.
+Appropriate fit is when the model performs well on training dataset as well as the
+testing dataset.
+
+======================================================================================
+
+
+
+
+
+
+
+
+
+

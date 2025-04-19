@@ -74,12 +74,12 @@ Ans: RMSE(Root Mean Squared Error) (0 to infinity) and
 
 When test and train root mean square error (RMSE) are high - underfitting ---> may be wrong algorithm (Not suitable for this dataset)
 
-When test and train RMSE are in acceptable range (low) - appropriate 
+When test and train RMSE are in an acceptable range (low) - appropriate 
 
-When test root mean square error (rmse is high and train rmse is low  - overfitting ---> could be due to many things, 
-1. Representation of data points in training and test (not proper representation of all the features),  For Eg. Like training data has 3 locations data while test has only 2.
+When test root mean square error (RMSE is high and train RMSE is low  - overfitting ---> could be due to many things, 
+1. Representation of data points in training and test (not proper representation of all the features),  For Eg. Like training data has 3 locations of data while test has only 2.
 
-2. Features might be correlated to each other 
+2. Features might be correlated with each other 
 
 
 
