@@ -1,0 +1,175 @@
+Ensemble learning:
+
+-- It is a technique used for improving prediction accuracy.
+-- It uses multiple learning algorithms instead of a single algorithm.
+-- 2 commonly used ensemble methods are:
+
+-- Bagging 
+-- Boosting 
+
+Bagging --> 
+
+Multiple models are trained using the same algorithm with a subset of the training data, which is selected with replacement and assigned to each training model present.
+
+Bagging usually considers homogeneous weak learners. It learns from them 
+independently,y, and then it combines the output of the weak learners in 
+a deterministic averaging process.
+In Bagging, all the weak learners learn in parallel/in other words, simultaneously.
+Bagging stands for bootstrap aggregation.
+
+Bootstrapping:
+
+--Bootstrapping is a sampling method where a sample is chosen out of a set, 
+using the replacement method. The learning algorithm is then run on the 
+samples selected.
+
+--The bootstrapping technique uses sampling with replacements to ensure that the selection procedure is completely random.
+
+Aggregation:
+--Model predictions undergo aggregation to combine them for the final 
+prediction to consider all the outcomes possible. The aggregation can be done 
+based on the total number of outcomes or on the probability of predictions 
+derived from the bootstrapping of every model in the procedure.
+
+
+
+Bagging Algorithm:  Random Forest Classifier
+
+-- A bagging technique based on a decision tree algorithm.
+
+-- n number of decision trees put together -- > forest.
+-- The input data to the algorithm is subsampled (a subset of both the
+records and columns), and then it is sent to every decision tree initialised
+earlier in a random fashion. --> random
+
+---> Random Forest Classifier.
+
+100 records, 10 columns
+
+5 decision trees
+subsets:
+DT1 - 1 - 20, [1,2,3] -- (records, columns)
+DT2 - 21 - 50 ,[4,5,6]
+DT3 - 11 - 40, [7,8,9]
+DT4 - 41 - 80 ,[9,10,1]
+DT5 -[81 -100, 1 -10] , [2,3,4]
+-----------------------------------------------------------------------------
+Eg: Iris data 
+
+3 classes - setosa, versicolor and virginica
+
+RFC : 
+no.Of DTs = 5
+
+new data point --> every decision tree, on looking at the new
+                   data point, would vote for one of the target 
+                   classes. The majority class label will be considered
+                   as the output.
+
+DT1 --> Setosa, DT2 --> viriginica, DT3 --> setosa, DT4 --> versicolor,
+DT5 --> Setosa 
+
+What would be the final class label of the new data point?
+----> setosa
+
+Advantages of bagging:
+
+The ensemble model based on bagging reduces the variance of the 
+estimate(target column prediction value).
+------------------------------------------------------------------------------
+Boosting: 
+
+Advantage -- it reduces bias and, in turn, increases prediction accuracy.
+
+Boosting considers homogeneous weak learners and it sequentially learns from them. Unlike bagging, where the learning is parallel.
+Here, the learning is also adaptive -- the base model depends on the 
+previous model's output.
+                       ------------------------------------
+GBM - Many models are trained in a gradual, additive, and sequential manner.
+
+Adaboost identifies the shortcomings by adding a high weight for the 
+misclassified data points. 
+GBM -- it uses a gradient in the loss function to identify the misclassified
+points. 
+
+Loss function -- a measure that indicates how well a model's coefficients
+are at fitting the underlying data. 
+It combines all the outputs in a deterministic strategy.
+
+----------------------------------------------------------------------
+XG Boost Algorithm(Extreme Gradient Boost):
+=========================================
+
+Unique Features of XGBoost
+--------------------------
+
+XGBoost is a popular implementation of gradient boosting. Let’s discuss some 
+features of XGBoost that make it so interesting:
+
+Regularization: XGBoost has an option to penalize complex models through both L1 
+and L2 regularization. Regularization helps in preventing overfitting
+
+Handling sparse data: Missing values or data processing steps like one-hot encoding 
+make data sparse. XGBoost incorporates a sparsity-aware split finding algorithm to 
+handle different types of sparsity patterns in the data
+
+Cache awareness: In XGBoost, non-continuous memory access is required to get the 
+gradient statistics by row index. Hence, XGBoost has been designed to make optimal 
+use of hardware. This is done by allocating internal buffers in each thread, where 
+the gradient statistics can be stored
+
+Out-of-core computing: This feature optimizes the available disk space and maximizes 
+Its usage is when handling huge datasets that do not fit into memory
+
+XGBoost Benefits:
+-----------------
+High accuracy: XGBoost is known for its accuracy and has been shown to outperform 
+other machine learning algorithms in many predictive modeling tasks.
+Scalability: XGBoost is highly scalable and can handle large datasets with millions 
+of rows and columns.
+Efficiency: XGBoost is designed to be computationally efficient and can quickly 
+train models on large datasets.
+Flexibility: XGBoost supports a variety of data types and objectives, including 
+regression, classification, and ranking problems.
+Regularization: XGBoost incorporates regularization techniques to avoid overfitting 
+and improve generalization performance.
+Interpretability: XGBoost provides feature importance scores that can help users 
+understand which features are most important for making predictions.
+Open-source: XGBoost is an open-source library that is widely used and supported 
+by the data science community.
+
+===========================================================================================
+
+References:
+===========
+https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/
+https://www.analyticsvidhya.com/blog/2018/09/an-end-to-end-guide-to-understand-the-math-behind-xgboost/
+
+=============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
