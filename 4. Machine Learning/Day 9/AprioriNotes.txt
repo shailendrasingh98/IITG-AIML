@@ -1,0 +1,65 @@
+Apriori algorithm:
+
+Objective : to find the 3 parameters of the Apriori algorithm 
+           - Support, Lift and Confidence - between 2 items - Pizzas & Cokes
+
+Scenario:
+
+We have 1,000 customer transaction records with us. Out of these 1000
+transactions, 100 transactions contain Coke.
+While 150 transactions contain Pizza.
+And of these 150 transactions, 50 transactions contain Coke as well.
+
+Using this data, we are going to find the support, lift and confidence
+values between Pizza and coke.
+
+Support :
+
+--> It is a parameter which tells about the popularity of an item.
+
+Support(Pizza) = Total no. of transactions containing Pizza /
+                  Total no of transactions
+               = 150 /1000 = 0.15
+
+Support (Coke) =  100 / 1000 = 0.1
+
+Confidence : 
+
+--> It is a parameter that tells us about the likelihood of one product 
+being purchased when the other product is already bought.
+
+Confidence (Coke -> Pizza) = No.of Transactions contain both Coke and
+                             Pizza / No. of Transactions containing Pizza 
+
+                            = 50 / 150  = 1/3 = 33.3 %
+
+Lift : 
+
+--> It is a parameter which refers to the increase in the ratio of sales 
+of Coke when pizza has already been bought.
+
+
+Lift(Coke -> Pizza) = Confidence(Coke->Pizza) /
+                      Support (Pizza)
+                    = 0.333/ 0.15
+                    = 2.22
+
+This value 2.22 actually indicates how many times the likelihood of 
+buying pizza and coke together is more than that of the likelihood of buying
+just the Pizza alone.
+
+--> Higher the lift, higher the chances of the 2 items being bought together.
+--> if the lift value <= 1, then it means that it is very much unlikely for
+    the two items being bought together.
+
+------------------------------------------------------------------------------
+       
+
+
+
+                          
+
+
+
+
+
