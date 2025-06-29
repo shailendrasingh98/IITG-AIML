@@ -1,0 +1,146 @@
+Label encoder : used when there are categorical values in the column.
+
+eg: Long distance / Short distance / Medium distance --> Trip type
+LE --> 0          , 2             ,    1
+
+-------------------------------------------------------------------------------------
+
+Natural language processing is an upcoming field and I am looking forward to 
+learn it. At Simplilearn, they seem to cover natural language processing 
+topics.
+
+Word tokenizer : splits the input sentence/paragragh into individual words.
+
+Stop word removal : an in built list of stop words in NLTK for 17 languages.(western)
+
+It's a word filtration step. you filter out those words that are not important
+(i.e) the words that are available in the predefined stop word list are filtered out.
+
+---> done to achieve dimensionality reduction.
+
+Text transformation & dimensionality reduction : Stemming / Lemmatization
+
+Stemming: Simple process of eliminating the suffixes of the input words in 
+order to figure out the root words.
+
+"I like helping other people. My friend Nithin also helps many orphans. Some
+old age people at my place are also being helped by several NGOs."
+
+helping --> help , helps --> help , helped --> help
+
+what if the word is "beautiful"? Stemming --> beauti : we do not have this
+word in the English dictionary. --> disadvantage
+
+Lemmatization : The process of finding the root words of the input words with
+the help of an in-built dictionary. 
+
+lemmatize the word - beautiful --> beauty 
+
+Saw --> Noun & Verb
+
+1. I saw a Lion.  --> pass such words to a lemmatizer along with it's POS tag.
+
+2. The tree was cut with a saw. 
+
+for word "saw" in the first sentence --> lemmatizer(saw, "VBD") --> see
+
+for word "saw" in the second sentence --> lemmatizer(saw, "N") --> saw 
+
+
+POS tagging : the step in which the input words are tagged with the appropriate
+Part of Speech.
+
+NER : Named Entity Recognition : finding the type of the Noun that is used.
+
+Person's name , Place name, Company name, Thing's name --> Nouns
+-------------------------------------------------------------------------------------
+
+ML systems cannot understand text data.
+Eg: Word corpus is as below ->
+
+[Natural, language, processing, is , taught, at, Simplilearn]- corpurs of words
+
+[0,1,2,3,4,5,6] - simple imagination of representing the above word corpus in numbers.
+
+------------------------------------------------------------------------------------
+
+Vectorizing the input text:
+----------------------------
+The process of representing the text in numbers.
+
+1. Count Vectorizer / Bag of words
+2. Tf-Idf Vectorizer
+
+
+Count Vectorizer / Bag of words model:
+--------------------------------------
+Sent 1 --> Ravi and I play tennis together.
+Sent 2 --> I like playing tennis.
+
+step 1 --> words will be tokenised
+step 2 --> the word freq will be calculated 
+
+eg: Ravi - 1 , I - 2 , tennis - 2 ,and -1, play -1 , playing - 1, like -1, together -1
+
+step 3 : figure out the top n most frequently occurring words. you can select
+any n value
+
+eg : n = 4
+
+therefore, features will be the words -- Tennis, I, Ravi, and 
+
+         Tennis | I| Ravi| and 
+Sent 1 --> 1 ,   1,   1,   1
+Sent 2 --> 1,    1,   0 ,  0 
+
+------------------------------------------------------------------------------
+Tf-Idf : Term frequency - Inverse Document frequency
+
+Ravi and I play tennis together.
+I like playing tennis.
+
+words: Ravi, and, I , play, tennis, playing, together 
+
+term frequency : Ravi - 1 , I - 2 , tennis - 2, together - 1, playing -1 
+                 and - 1 ,play - 1 , like - 1
+
+Inverse document frequency : finding the words that are unique to a document
+so that the document can be identified easily. 
+
+o/p of IDF --> individual scores for the words is computed. 
+and this score is calculated in such a way that,
+a higher score means that the word is more unique in a particular document while 
+a lesser score means that the word is less unique in a particular document.
+It is calculated as the logarithm of the ratio of the total number of documents to 
+the number of documents containing the term. 
+The formula for IDF is -IDF(term) = log(total number of documents /
+				    (1 + number of documents containing the term))
+
+So, now the features will be --> Ravi, together, like 
+
+Sent 1 --> 1, 1, 0
+Sent 2 --> 0, 0, 1
+
+=============================================================================
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
